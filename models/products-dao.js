@@ -2,8 +2,9 @@
 const os      = require('os');
 const path    = require('path');
 const sqlite3 = require('sqlite3');
+const config  = require('../config.json');
 
-const dbfile  = '4413/pkg/sqlite/Models_R_US.db';
+const dbfile  = config.db;
 const dbpath  = path.join(os.homedir(), ...dbfile.split('/'));
 const db      = new (sqlite3.verbose()).Database(dbpath);
 

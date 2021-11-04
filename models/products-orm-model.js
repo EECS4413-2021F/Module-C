@@ -1,18 +1,14 @@
 
-const os   = require('os');
-const path = require('path');
+const os     = require('os');
+const path   = require('path');
+const config = require('../config.json');
 
-const _sequelize = require('sequelize'); 
-const { Sequelize, DataTypes, Op } = _sequelize;
+const { Sequelize, DataTypes, Op } = require('sequelize');
 
-const dbfile = '4413/pkg/sqlite/Models_R_US.db';
-const dbpath = path.join(os.homedir(), ...dbfile.split('/'));
-const dbconf = { 
-  define: { 
-    freezeTableName: true,
-    timestamps: false
-  }
-};
+
+const dbfile  = config.db;
+const dbpath  = path.join(os.homedir(), ...dbfile.split('/'));
+const dbconf  = config.sequelize;
 
 const sequelize = new Sequelize('sqlite:' + dbpath, dbconf);
 

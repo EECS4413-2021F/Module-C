@@ -3,18 +3,14 @@
 const express = require('express');
 const session = require('express-session');
 const routes  = require('./routes.js');
+const config  = require('./config.json');
 
 const app  = express();
-const port = process.argv[2] || 3000;
+const port = process.argv[2] || config.port;
 
 // Use the session middleware
 app.enable('trust proxy');
-app.use(session({ 
-  secret: 'secret',
-  resave: true,
-  saveUninitialized: true,
-  proxy: true
-}));
+app.use(session(config.session));
 
 // Use middleware to parse request body as JSON.
 // bodyParser is deprecated and now merged into express itself.
