@@ -26,9 +26,9 @@ request.on('response', (res) => {
   res.on('end', () => {
     try {
       if (/^application\/json/.test(contentType)) {
-        console.log(JSON.parse(response.join()));
+        console.log(JSON.parse(response.join("")));
       } else {
-        console.log(response.join());
+        console.log(response.join(""));
       }
     } catch (e) {
       console.error(e.message);

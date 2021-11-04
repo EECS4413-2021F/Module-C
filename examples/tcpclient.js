@@ -29,6 +29,6 @@ client.on('connect', () => {
 
 client.on('data', (chunk) => response.push(chunk));
 client.on('end', () => {
-  console.log(response.join());
+  console.log(response.join(""));
   rl.close();
 });

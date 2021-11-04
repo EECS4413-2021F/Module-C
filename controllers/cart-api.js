@@ -8,6 +8,7 @@ const { Product, Category, Vendor } = model;
  * @typedef {import('express').RequestHandler} RequestHandler
  */
 
+// Shared arguments in Product.findAll for Sequelize ORM.
 const include = [ Category, Vendor ];
 const attributes = [
   'id',

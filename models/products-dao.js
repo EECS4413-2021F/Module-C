@@ -48,7 +48,7 @@ module.exports = {
       }
     });
 
-    db.all(statement.join(), values, (err, rows) => {
+    db.all(statement.join(""), values, (err, rows) => {
       if (err == null) {
         success(rows);
       } else {
