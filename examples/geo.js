@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { createServer } from 'net';
+const { createServer } = require('net');
 
 const port   = process.argv[2] || 4413;
 const server = createServer();

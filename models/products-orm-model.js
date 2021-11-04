@@ -1,8 +1,8 @@
 
-import os   from 'os';
-import path from 'path';
+const os   = require('os');
+const path = require('path');
 
-import _sequelize from 'sequelize'; 
+const _sequelize = require('sequelize'); 
 const { Sequelize, DataTypes, Op } = _sequelize;
 
 const dbfile = '4413/pkg/sqlite/Models_R_US.db';
@@ -101,7 +101,7 @@ Product.filters = function (queries) {
   };
 };
 
-export default {
+module.exports = {
   Product,
   Category,
   Vendor

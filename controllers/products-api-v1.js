@@ -1,11 +1,11 @@
 
-import dao from '../models/products-dao.js';
+const dao = require('../models/products-dao.js');
 
 /**
  * @typedef {import('express').RequestHandler} RequestHandler
  */
 
-export default {
+module.exports = {
 
   /**
    * Retrieve all of the Products within the database

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { createServer } from 'http';
+const { createServer } = require('http');
  
 const port   = process.argv[2] || 8080;
 const server = createServer();

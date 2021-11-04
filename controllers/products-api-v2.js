@@ -1,6 +1,6 @@
 
-import _     from 'lodash';
-import model from '../models/products-orm-model.js';
+const _     = require('lodash');
+const model = require('../models/products-orm-model.js');
 
 const { Product, Category, Vendor } = model;
 
@@ -20,7 +20,7 @@ const attributes = [
   'qty'
 ];
 
-export default {
+module.exports = {
 
   /**
    * Retrieve all of the Products within the database

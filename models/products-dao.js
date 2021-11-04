@@ -1,12 +1,11 @@
 
-import os     from 'os';
-import path   from 'path';
-import sqlite from 'sqlite3';
+const os      = require('os');
+const path    = require('path');
+const sqlite3 = require('sqlite3');
 
 const dbfile  = '4413/pkg/sqlite/Models_R_US.db';
 const dbpath  = path.join(os.homedir(), ...dbfile.split('/'));
-const sqlite3 = sqlite.verbose();
-const db      = new sqlite3.Database(dbpath);
+const db      = new (sqlite3.verbose()).Database(dbpath);
 
 const GET_ALL_PRODUCTS = 'SELECT P.*, C.name as category, V.name as vendor '
                        + 'FROM Product P, Category C, Vendor V '
@@ -26,7 +25,17 @@ const conditions = {
   "max_qty":     " AND P.qty  <= ?"
 };
 
-export default {
+module.exports = {
+  /**
+   * Retrieves an array of Products that match the given query parameters. If
+   * the array is retrieved successfully, pass them as arguments to the success
+   * callback, otherwise pass the error to the failure callback. If no Products
+   * are found, the array is empty.
+   *
+   * @param {{[string]: string}} query
+   * @param {(rows: any[]) => void} success 
+   * @param {(err: Error | string) => void} failure 
+   */
   getProducts(query, success, failure = console.log) {
     let statement = [GET_ALL_PRODUCTS];
     let values    = [];

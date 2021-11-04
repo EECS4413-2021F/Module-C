@@ -1,13 +1,13 @@
 
-import productsApiV1 from "./controllers/products-api-v1.js";
-import productsApiV2 from "./controllers/products-api-v2.js";
-import cartApi       from "./controllers/cart-api.js";
+const productsApiV1 = require("./controllers/products-api-v1.js");
+const productsApiV2 = require("./controllers/products-api-v2.js");
+const cartApi       = require("./controllers/cart-api.js");
 
 /**
  * @typedef {import('express').Application} Application
  */
 
-export default {
+module.exports = {
 
   /**
    * Defines and binds each URI endpoint and HTTP method

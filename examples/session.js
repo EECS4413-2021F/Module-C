@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import express from 'express';
-import session from 'express-session';
+const express = require('express');
+const session = require('express-session');
 
 const app  = express();
 const port = process.argv[2] || 3000;

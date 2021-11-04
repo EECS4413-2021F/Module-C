@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { get } from 'http';
+const { get } = require('http');
 
 const request = get(process.argv[2]);
 

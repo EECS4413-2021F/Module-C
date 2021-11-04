@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { createConnection } from 'net';
-import { createInterface } from 'readline';
+const { createConnection } = require('net');
+const { createInterface } = require('readline');
 
 const host = process.argv[2];
 const port = process.argv[3];

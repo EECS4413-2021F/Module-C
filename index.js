@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import express from 'express';
-import session from 'express-session';
-import routes  from './routes.js';
+const express = require('express');
+const session = require('express-session');
+const routes  = require('./routes.js');
 
 const app  = express();
 const port = process.argv[2] || 3000;
