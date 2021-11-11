@@ -24,7 +24,7 @@ const attributes = [
 module.exports = {
 
   /**
-   * Retrieve the an array of Product items within
+   * Retrieve an array of Product items within
    * shopping cart for the current session. Responses
    * with a JSON array of Product objects.
    * 
