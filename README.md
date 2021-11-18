@@ -26,7 +26,7 @@ The overall structure of the project is as follows:
 │   └── products-api-v2.js
 ├── models
 │   ├── products-dao.js
-│   └── products-orm-model.js
+│   └── products-orm.js
 ├── node_modules
 ├── config.json
 ├── index.js

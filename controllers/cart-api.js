@@ -1,6 +1,6 @@
 
 const _     = require('lodash');
-const model = require('../models/products-orm-model.js');
+const model = require('../models/products-orm.js');
 
 const { Product, Category, Vendor } = model;
 
