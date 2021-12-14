@@ -21,7 +21,7 @@ server.on('connection', (socket) => {
       socket.write(`Don't understand: ${request}`);
       socket.end();
     }
-  });  
+  });
 });
 
 /// Helper functions
